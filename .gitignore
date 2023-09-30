@@ -1,2 +1,7 @@
 # ignore directory test
 test
+
+# ignore executable file by the name a.out
+a.out
+
+
