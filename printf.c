@@ -11,17 +11,16 @@ int _printf(const char *format, ...)
 	int count = 0;
 	va_list args;
 
+	va_start(args, format);
+
 	if (format == NULL || !format)
 		return (-1);
-
-	va_start(args, format);
 
 	while (*format != '\0')
 	{
 		if (*format == '%')
 		{
 			format++;
-			/* introduce function to handle different case*/
 			count += print_str(format, args);
 		}
 		else
