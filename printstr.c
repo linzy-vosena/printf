@@ -1,41 +1,24 @@
 #include "main.h"
 
 /**
- * print_str - prints characcters
- * @format: argument character
- * @args: argument of type va_list
- *
- * Return:  return count of printed characters
+ * print_str - prints a string
+ * @str: string to print
+ * Return: count of printed characters
  */
-int print_str(const char *format, va_list args)
+int print_str(char *str)
 {
-	int count = 0, i;
-	char ch, *str;
+	int  count = 0, i;
 
-	switch (*format)
+	if (str != NULL)
 	{
-		case 'c':
-			ch = va_arg(args, int);
-			count += _putchar(ch);
-			break;
-		case 's':
-			str = va_arg(args, char *);
-			if (str != NULL)
-			{
-				for (i = 0; str[i] != '\0'; i++)
-					count += _putchar(str[i]);
-			}
-			else
-			{
-				str = "(null)";
-				for (i = 0; str[i] != '\0'; i++)
-					count += _putchar(str[i]);
-			}
-			break;
-		case '%':
-			count += _putchar(*format);
-			break;
+		for (i = 0; str[i] != '\0'; i++)
+			count += _putchar(str[i]);
 	}
-
+	else
+	{
+		str = "(null)";
+		for (i = 0; str[i] != '\0'; i++)
+			count += _putchar(str[i]);
+	}
 	return (count);
 }

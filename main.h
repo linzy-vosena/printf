@@ -6,6 +6,8 @@
 
 int _putchar(char c);
 int _printf(const char *format, ...);
-int print_str(const char *format, va_list args);
+int get_case(const char *format, va_list args);
+
+int print_str(char *);
 
 #endif /* end PRINTF_H */

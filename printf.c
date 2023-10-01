@@ -21,7 +21,7 @@ int _printf(const char *format, ...)
 		if (*format == '%')
 		{
 			format++;
-			count += print_str(format, args);
+			count += get_case(format, args);
 		}
 		else
 		{
