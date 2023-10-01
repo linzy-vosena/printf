@@ -12,32 +12,29 @@ int print_str(const char *format, va_list args)
 	int count = 0, i;
 	char ch, *str;
 
-	if (*format == 'c')
+	switch (*format)
 	{
-		ch = va_arg(args, int);
-		count += _putchar(ch);
-	}
-
-	if (*format == 's')
-	{
-		str = va_arg(args, char *);
-
-		if (str != NULL)
-		{
-			for (i = 0; str[i] != '\0'; i++)
-				count += _putchar(str[i]);
-		}
-		else
-		{
-			str = "(null)";
-			for (i = 0; str[i] != '\0'; i++)
-				count += _putchar(str[i]);
-		}
-	}
-
-	if (*format == '%')
-	{
-		count += _putchar(*format);
+		case 'c':
+			ch = va_arg(args, int);
+			count += _putchar(ch);
+			break;
+		case 's':
+			str = va_arg(args, char *);
+			if (str != NULL)
+			{
+				for (i = 0; str[i] != '\0'; i++)
+					count += _putchar(str[i]);
+			}
+			else
+			{
+				str = "(null)";
+				for (i = 0; str[i] != '\0'; i++)
+					count += _putchar(str[i]);
+			}
+			break;
+		case '%':
+			count += _putchar(*format);
+			break;
 	}
 
 	return (count);
