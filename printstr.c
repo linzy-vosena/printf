@@ -35,5 +35,10 @@ int print_str(const char *format, va_list args)
 		}
 	}
 
+	if (*format == '%')
+	{
+		count += _putchar(*format);
+	}
+
 	return (count);
 }
