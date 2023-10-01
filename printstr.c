@@ -21,8 +21,18 @@ int print_str(const char *format, va_list args)
 	if (*format == 's')
 	{
 		str = va_arg(args, char *);
-		for (i = 0; str[i] != '\0'; i++)
-			count += _putchar(str[i]);
+
+		if (str != NULL)
+		{
+			for (i = 0; str[i] != '\0'; i++)
+				count += _putchar(str[i]);
+		}
+		else
+		{
+			str = "(null)";
+			for (i = 0; str[i] != '\0'; i++)
+				count += _putchar(str[i]);
+		}
 	}
 
 	return (count);

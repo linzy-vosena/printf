@@ -30,8 +30,12 @@ int main(void)
     printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
     _printf("Character:[%c]\n", 'H');
     printf("Character:[%c]\n", 'H');
+    _printf("%c\n", 'S');
     _printf("String:[%s]\n", "I am a string !");
     printf("String:[%s]\n", "I am a string !");
+    _printf("%s", "This sentence is retrieved from va_args!\n");
+    _printf("Complete the sentence: You %s nothing, Jon Snow.\n", "know");
+    _printf("Complete the sentence: You %s nothing, Jon Snow.\n", (char *)0);
     _printf("Address:[%p]\n", addr);
     printf("Address:[%p]\n", addr);
     len = _printf("Percent:[%%]\n");
