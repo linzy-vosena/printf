@@ -30,6 +30,8 @@ int main(void)
     printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
     _printf("Character:[%c]\n", 'H');
     printf("Character:[%c]\n", 'H');
+    _printf("Let's see if the cast is correctly done: %c. Did it work?\n", 48);
+    _printf("%c%cth %s%s a%cg%s: Y%sou %s no%ching%s Snow.%c", 'W', 'i', "some ", "more", 'r', "s", "", "know", 't', ", Jon", '\n');
     _printf("%c\n", 'S');
     _printf("String:[%s]\n", "I am a string !");
     printf("String:[%s]\n", "I am a string !");
@@ -44,5 +46,17 @@ int main(void)
     printf("Len:[%d]\n", len2);
     _printf("Unknown:[%r]\n");
     printf("Unknown:[%r]\n");
+    
+    printf(NULL);
+    _printf(NULL);
+
+    printf("%");
+    _printf("%");
+
+    printf("%!\n");
+    _printf("%!\n");
+
+    printf("%K\n");
+    _printf("%K\n");
     return (0);
 }
