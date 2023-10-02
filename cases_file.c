@@ -25,6 +25,10 @@ int get_case(const char *format, va_list args)
 		case '%':
 			count += _putchar(*format);
 			break;
+		default:
+			count += _putchar(*--format);
+			count += _putchar(*++format);
+			break;
 	}
 
 	return (count);
